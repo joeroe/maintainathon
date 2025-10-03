@@ -1,11 +1,41 @@
 ---
-title: "Digital Archaeology Maintainathon"
-
+title: |
+  Digital Archaeology Maintainathon\
+  [#DigiArchMaintainathon]{.hashtag}
+subtitle: "Let's clean, document and revisit older code and data, together!"
+# description: "#DigiArchMaintainathon"
 ---
 
-Let’s clean, document and revisit older code and data, together!
+::: {.summary}
+1\.&nbsp; Put in the work\
+2\.&nbsp; Post about it\
+3\.&nbsp; Reflect and discuss\
+[✓.]{style="font-size: 24px; font-weight: bold; color: #5a7a2b;"} &nbsp;That's it!
+:::
 
-1. Put in the work
-2. Post about it
-3. Reflect and discuss\
-<div style="text-indent:-1em;"><span style="color:green;"><b>✓</b></span> That’s it!</div>
+<!-- ### [Some things you can do to participate:]{style="color: #5a7a2b;"} -->
+### [Some things you can do to participate:]{style="color: #ec5e2a;"}
+
+
+- Add comments to old code or code in progress
+- Write a better README
+- Archive your code in long-term repository
+- Document your research group's coding guidelines
+- Add an open license
+- Add a citation file to your repo
+- Write some contributor guidelines
+- Develop a roadmap or checklist of things to do
+- Acknowledge contributors
+- Make a video demo of your code in action
+- List your code in a community
+- Cleanup your working directories
+- Archive abandoned projects
+- Volunteer to review for the Journal of Open Source Software
+- Browse critical research on software development practices
+- Donate to FOSS projects
+
+::: {.maintext}
+Brought to you by the Special Interest Group for [**Scientific Scripting Languages in Archaeology**](https://sslarch.github.io/)
+
+Got any questions or feedback? Join us in our [Matrix](https://archaeo.social/@CAA_SSLA) chatroom or get in touch on [Mastodon](https://archaeo.social/@CAA_SSLA)!
+:::

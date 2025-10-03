@@ -15,14 +15,17 @@ $darker-green: #5a7a2b !default;
 $light-gray: #f1f3f5 !default;
 $mid-gray: #75776d !default;
 $darker-gray: #687178 !default;
+$ssla-orange: #ec5e2a;
+$x: #3d3d3d;
 
 // Navbar
-$navbar-bg: $sandstone-blue !default;
+$navbar-bg: $x !default;
 $navbar-fg: $bluegray !default;
 $navbar-hl: $white !default;
 
 // Links
-$link-color: $darker-green !default;
+// $link-color: $darker-green !default;
+$link-color: $ssla-orange !default;
 
 // Code blocks
 $code-block-bg: $light-gray !default;
