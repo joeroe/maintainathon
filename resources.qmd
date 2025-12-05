@@ -1,96 +1,141 @@
-### Add comments to old code or code in progress
-Something about Knuth's literate programming.
-
 ### Write a better README
-A README is a file that includes a detailed description of a project directory.
-They typically include a broad overview of what the project does, why it was made, and the rationale behind the way it was implemented.
-They also usually include instructions for how to install, run other otherwise make sense of the code and its components.
-READMEs may also include links to other related resources, recognize the roles of various contributors, update users regarding the status of the project, and indicate the project's overall orientation.
+A README is a plaintext file that includes a detailed description of a project.
+It's typically located in the root directory, and often includes:
 
-[makeareadme.com](https://www.makeareadme.com/) is a great resource that provides excellent tips for writing clear and helpful readmes.
-They also provide handy templates that you may adapt for your own purposes.
+- A broad overview of what the project does, why it was made, and the rationale behind the way it was implemented
+- Instructions for how to install or run the code
+- Links to other related tools or resources
+- Recognition of various contributors
+- Status updates, feature roadmaps, and an overview of the project's overall orientation
 
-### Writing comprehensive documentation
-- For more complex software, going beyond a readme
-- Sphynx and other tools
-- Best practices
-- Provide some excellent examples
+For additional support on how to make or improve your readme, visit [makeareadme.com](https://www.makeareadme.com/). It provides excellent tips for writing clear and helpful readmes and templates that you may adapt for your own purposes.
+
+### Add comments to old code or code in progress
+Code comments appear as silent (i.e. non-functional) text embedded in the source code.
+They communicate what functions or series of standalone operations do and a brief description of how they are situated in broader workflows.
+
+They may also include notes and task lists for iteratively improving existing functions.
+
+Here is a great write-up about how to write effective code comments: [How to Write Professional Code Comments: A Beginner's Guide to Better Code Documentation (dev.to)](https://dev.to/anurag_dev/how-to-write-professional-code-comments-a-beginners-guide-to-better-code-documentation-27hf)
+
+Some qualities of good code comments include:
+
+- Clear and concise
+- Easy to remove once a fix has been implemented
+- Explain the "why", not the "what"
+- Written for your future self
+
+Here are some examples of great code comments:
+
+<!-- Make this appear as a two in-line columns -->
+
+<!-- 
+```r
+xxx
+
+```
+
+```r
+xxx
+
+``` -->
+
 
 ### Archive your code in long-term repository
-Reference Zenodo's GitHub integration.
-Mention Software Heritage.
-Reference the GitHub / Internet Archive uploader tool.
-tDAR?
+Digital media is notoriously impermanent.
+Platforms that host code go offline, which may make it difficult to access and share project repositories.
+While they may provide very useful collaboration features, commercial platforms like GitHub and GitLab should not be trusted as long-term stewards.
+Professional archives should instead be used to backup public-facing code repositories.
 
-### Something about assigning version numbers
-List of various versioning schemes: https://nesbitt.io/2024/06/24/from-zerover-to-semver-a-comprehensive-list-of-versioning-schemes-in-open-source.html
+[Zenodo](https://zenodo.org/) is a general-purpose open repository developed under the European OpenAIRE program and operated by CERN, which allows researchers to deposit research papers, data sets, research software, reports, and any other research related digital artefacts.
+One of its key features is direct [integration with GitHub](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content), and once configured, saves a snapshot of each release.
+For each submission, a persistent digital object identifier (DOI) is minted.
 
-Some notable schemes:
+[Software Heritage](https://www.softwareheritage.org/) is another archive dedicated to preserving publicly accessible code.
+It regularly crawls several software forges and package indexes, and anyone can [upload their own repositories](https://archive.softwareheritage.org/save/) too.
+
+### Develop a release strategy
+Sharing code as a series of stable releases makes it easier to share code with predictable functionality.
+As new features are implemented, they should be rolled into a newer release.
+
+This enhances clarity for what users can expect when they download a specific release.
+It also makes it easier to communicate and de-bug issues raised by users by ensuring that all parties are accessing the same codebase.
+
+There are [numerous schemes](https://nesbitt.io/2024/06/24/from-zerover-to-semver-a-comprehensive-list-of-versioning-schemes-in-open-source.html) for releasing code, which enable developers to communicate the degree of changes made between versions.
+
+Some notable schemes include:
 
 - [Semantic Versioning](https://semver.org/)
-- [Calendar Versioning (CalVer)](https://calver.org/)
-- [Intended Effort Versioning (EffVer)](https://jacobtomlinson.dev/effver/)
-- [Romantic Versioning (RomVer)](https://romversioning.github.io/romver/)
+  - Major, Minor or Patch versions indicate breaking changes relative to prior versions.
 - [Alternative Versioning (AltVer)](https://altver.org/)
-- [Sentimental Versioning](https://github.com/dominictarr/sentimental-versioning)
+  - Tracks implementation of major overhauls, new features, and careful maintenance.
+- [Calendar Versioning (CalVer)](https://calver.org/)
+  - For "rolling" releases that follow a regular maintenance cycle.
 
-### Document your research group’s coding guidelines
-Develop some solid practices.
-Ensure they are actionable.
-Maybe something like "good enough" practices.
+### Add a license
+Licenses describe legal right for accessing, using and modifying code.
+Open licenses, which enable widespread and uninhibited use, are increasingly common, however copyleft or opinionated licenses impose restrictions that add conditions based on specific use-cases.
+For instance, [CC-NC limits reuse to non-commercial applications](https://wiki.creativecommons.org/wiki/NonCommercial_interpretation), [copyleft](https://en.wikipedia.org/wiki/Copyleft) forces downstream applications to adopt an equally permissive license for any derivative works, and numerous other licenses are aligned with specific social causes.
 
-DO NOT assign this task to the most technical person in the room.
-DO make plans to revisit this document one month, six months, etc in the future --- mark it down in your calendar now!
+Note that software licenses are often distinct from licenses intended for non-software materials, such as data, media, documentation and fonts.
 
-### Add an open license
-Visit [choosealicense.com](https://choosealicense.com/) for detailed information on software licenses.
+Visit [choosealicense.com](https://choosealicense.com/) for an extremely detailed survey and comparison of various software and non-software licenses.
 
-Note that software licenses are distinct from licenses intended for non-software materials, such as data, media, documentation and fonts.
-choosealicense.com also includes info on non-software licenses: https://choosealicense.com/non-software/
+There is also a page describing what happens if you don't choose a license: [No License](https://choosealicense.com/no-permission/)
 
-There is also an info page on what happens if you don't choose a license: https://choosealicense.com/no-permission/
-
-The Hippocratic License hosts a tool for creating a custom license including language suited to various parameters which you can mix and match at your own discretion, including explicit allowances and restrictions for various communities of potential use-cases, such as an Fossil Fuel Divestment module, a Law Enforcement module, and a Supply Chain Transparency module: https://firstdonoharm.dev/build/
+[The Hippocratic License hosts a tool](https://firstdonoharm.dev/build/) for creating a custom license, including explicit allowances and restrictions for various potential use-cases, such as a Fossil Fuel Divestment module, a Law Enforcement module, and a Supply Chain Transparency module.
 
 ### Add a citation file to your repo
-Add a cff file, which includes information that can be picked up by a reference manager to generate clean citations: https://citation-file-format.github.io/
-
-### Write some contributor guidelines
-Reference the Mastodon Server Covenant: https://joinmastodon.org/covenant
-
-Reference the Archaeological Ethics Database: https://archaeologicalethics.org/
-
-Ensure that there are mechanisms to follow through on these guidelines; they are meaningless unless they can be backed by action.
+Add a [cff file](https://citation-file-format.github.io/), which includes information that can be picked up by a reference manager to generate clean citations.
 
 ### Develop a roadmap or checklist of things to do
-https://open-innovation-projects.org/blog/creating-a-comprehensive-open-source-project-roadmap-a-step-by-step-guide-for-successful-development
+It may be helpful to develop a plan of action to structure future work.
+Some factors to consider include:
+
+- What features are on the horizon?
+- What steps need to be taken to achieve them?
+- What resources will be needed to ensure effective action?
+- Who can I call on for support?
+
+Effective roadmaps have tangible and measurable outcomes, and are comprised of tasks that can actually be acted upon.
+
+Source: <https://open-innovation-projects.org/blog/creating-a-comprehensive-open-source-project-roadmap-a-step-by-step-guide-for-successful-development>
 
 ### Acknowledge contributors
-It's all about community!
+Open source projects thrive based on community support, and acknowledging contributors is a great way to maintain enthusiasm among the team.
+This can be done in the README, on social media, and in any other venue where you share your work (journal articles, conference presentations, etc).
 
-Acknowledging contributors coming from under-represented backgrounds may help foster more inclusive developer communities, which is great for enhancing the quality of both communities and codebases.
+When acknowledging the people behind the code, be sure to describe **_how_** people contribute, including specific things they've done to move the project forward.
 
-### Make a video demo of your code in action
+Highlighting the roles of contributors coming from under-represented backgrounds may also helo foster more inclusive developer communities, which is great for enhancing the quality of both communities and codebases.
+
 ### List your project in a community registry
-- https://open-archaeo.info/
-- https://github.com/SPAAM-community/AncientMetagenomeDir
+It may be beneficial to include your project in a community registry to ensure that the work is findable and accessible by target audiences.
 
-### Cleanup your working directories
+Archaeologists may consider reaching out to [open-archaeo.info](https://open-archaeo.info/), which is a list of open source software and resources developed by and for archaeologists.
+[AncientMetagenomeDir](https://www.spaam-community.org/AncientMetagenomeDir/#/) is a similar resource specializing on tools developed in support of ancient DNA research.
+
+Additionally, the [archaeology CRAN task view](https://github.com/benmarwick/ctv-archaeology) lists numerous studies that include publicly accessible R code, which is a great resource for understanding how the community uses R in their research.
+
 ### Archive abandoned projects
-Acknowledge when it's time to tuck a project away, and mark it as archived.
+Acknowledge when it's time to tuck a project away, and mark it as [archived](https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories).
 This will put a banner on your repo and restrict any new pull requests.
 
-If a project has been picked up by others, or the work continues in another forum, make sure to provide a link!
+If a project has been picked up by others, or the work continues in another forum, make sure to provide a link in the original README!
 
-### Volunteer to review for the Journal of Open Source Software
-### Browse critical research on software development practices
 ### Donate to FOSS projects
-While many archaeologists who write code enjoy stable incomes, many others do not.
-In fact, archaeologists who write code tend to be disproportionally of dis-empowered employment status (https://intarch.ac.uk/journal/issue67/13/full-text.html)
+While many archaeologists who write code benefit from access to a stable income, many others do not.
+In fact, archaeologists who write code tend to be precariously employed.
+
+Even a small donation shows deep appreciation, and can help motivate labour performed largely by volunteers.
+
+If you are able to provide financial support, please reach out to the maintainers of your most-used tools!
 
 ### Post about your work
 Make it known that you're making cool stuff, and that anyone can use it!
 People may find even the most casual and thrown-together projects useful, if not in practice then as inspiration for building upon and improving!
+
+---
 
 ### Something about vibe coding
 
@@ -103,5 +148,33 @@ How to ensure that your code is valued for getting a job
 
 ### Optimizing for speed and efficiency
 
+### Writing comprehensive documentation
+- For more complex software, going beyond a readme
+- Sphynx and other tools
+- Best practices
+- Provide some excellent examples
 
 
+### Document your research group's coding guidelines
+Develop some solid practices.
+Ensure they are actionable.
+Maybe something like "good enough" practices.
+
+DO NOT assign this task to the most technical person in the room.
+DO make plans to revisit this document one month, six months, etc in the future --- mark it down in your calendar now!
+
+
+### Write some contributor guidelines
+Reference the Mastodon Server Covenant: https://joinmastodon.org/covenant
+
+Reference the Archaeological Ethics Database: https://archaeologicalethics.org/
+
+Ensure that there are mechanisms to follow through on these guidelines; they are meaningless unless they can be backed by action.
+
+### Make a video demo of your code in action
+
+### Cleanup your working directories
+
+
+### Volunteer to review for the Journal of Open Source Software
+### Browse critical research on software development practices
