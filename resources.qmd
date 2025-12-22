@@ -38,8 +38,6 @@ xxx
 
 ``` -->
 
-
-
 ### Archive your code in long-term repository
 While commercial platforms like GitHub and GitLab may provide very useful collaboration features, they should not be trusted as long-term stewards of software or data. Professional archives should instead be used to backup public-facing code repositories.
 
@@ -90,7 +88,7 @@ date-released: 2024-08-24
 ```
 </details>
 
-### Develop a roadmap or checklist of things to do
+### Develop a project roadmap
 It may be helpful to develop a plan of action to structure future work. Some factors to consider include:
 
 - What features are on the horizon?
@@ -208,7 +206,7 @@ Done! We now wrote two *unit tests* (even though one of them will fail miserably
 ### Setup CI
 
 
-### Document your research group's coding guidelines
+### Establish coding guidelines for your research group
 Develop some solid practices.
 Ensure they are actionable.
 Maybe something like "good enough" practices.
@@ -216,10 +214,9 @@ Maybe something like "good enough" practices.
 DO NOT assign this task to the most technical person in the room.
 DO make plans to revisit this document one month, six months, etc in the future --- mark it down in your calendar now!
 
-### Write some contributor guidelines
-Reference the Mastodon Server Covenant: https://joinmastodon.org/covenant
-
-Reference the Archaeological Ethics Database: https://archaeologicalethics.org/
+### Post contributor guidelines
+- Reference the Mastodon Server Covenant: https://joinmastodon.org/covenant
+- Reference the Archaeological Ethics Database: https://archaeologicalethics.org/
 
 Ensure that there are mechanisms to follow through on these guidelines; they are meaningless unless they can be backed by action.
 
