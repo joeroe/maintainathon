@@ -235,19 +235,23 @@ Additionally, the [archaeology CRAN task view](https://github.com/benmarwick/ctv
 Share the cool things you make, and communicate the fact that anyone can use or adapt them!
 Even if the code is messy, it may inspire others to learn about your methods and extend upon what you've already done.
 
-### [in progress:]{.mark} Establish coding guidelines for your research group
-Develop some solid practices.
-Ensure they are actionable.
-Maybe something like "good enough" practices.
-
-DO NOT assign this task to the most technical person in the room.
-DO make plans to revisit this document one month, six months, etc in the future --- mark it down in your calendar now!
-
 ### [in progress:]{.mark} Post contributor guidelines
-- Reference the Mastodon Server Covenant: https://joinmastodon.org/covenant
-- Reference the Archaeological Ethics Database: https://archaeologicalethics.org/
+Contributor guidelines inform prospective contributors about how they should engage with the codebase.
+They may include requests to focus on specific aspects of the project, and requirements to provide specific information in pull requests or issues.
+They may also outline the parameters through which code is vetted before being folded into the main branch.
 
-Ensure that there are mechanisms to follow through on these guidelines; they are meaningless unless they can be backed by action.
+Contributing guidelines are often specified in a [CONTRIBUTING.md file](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).
+The Good Docs Project has written about the value of [contributing guidelines](https://www.thegooddocsproject.dev/template/contributing-guide), and has also provided [a great template](https://gitlab.com/tgdp/templates/-/blob/main/contributing-guide/template_contributing-guide.md) for you to adapt for your own project.
+
+### [in progress:]{.mark} Post a code of conduct
+A code of conduct demonstrates that you are able to foster a warm and welcoming community.
+They accomplish this by encouraging ethical and inclusive behaviour and by establishing parameters for a collaborative, respectful and safe work environment.
+
+A code of conduct also needs to be enforceable.
+It is therefore also necessary to include a response plan that outlines how incidents should be reported and documented, who will receive and handle these incidents, how incidents will be investigated and resolved, and how appeals and conflicts of interests will be handled.
+
+Codes of conduct are often specified in a [CODE_OF_CONDUCT.md file](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project).
+The Good Docs Project has written extensively about [codes of conduct](https://www.thegooddocsproject.dev/template/code-of-conduct), and has also provided templates documents for [codes of conduct](https://gitlab.com/tgdp/templates/-/blob/main/code-of-conduct/template_code-of-conduct.md), [response plans](https://gitlab.com/tgdp/templates/-/blob/main/code-of-conduct-response-plan/template_code-of-conduct-response-plan.md), and means of documenting and investigating incidents.
 
 ### Donate to FOSS projects
 While many archaeologists who write code do benefit from a stable income, many do not. In fact, archaeologists who write code tend to be precariously employed. Even a small donation shows deep appreciation, and can help motivate labour performed largely by volunteers.
@@ -339,3 +343,5 @@ Done! We now wrote two *unit tests* (even though one of them will fail miserably
 
 ## Further Reading
 [in progress:]{.mark}
+
+https://doi.org/10.1145/3106237.3106246
