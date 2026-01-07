@@ -30,115 +30,150 @@ Some qualities of good code comments include:
 
 Here is a great write-up about how to write effective code comments: [How to Write Professional Code Comments: A Beginner's Guide to Better Code Documentation (dev.to)](https://dev.to/anurag_dev/how-to-write-professional-code-comments-a-beginners-guide-to-better-code-documentation-27hf)
 
-Additionally, here are some great examples of code comments written by archaeologists:
+Here's a great example of code comments in action, adapted from the [interpolate_curve.R](https://github.com/isakro/shoredate/blob/master/R/interpolate_curve.R) function in Isak Roalkvam's [shoredate](https://github.com/isakro/shoredate) package:
 
-::: {.panel-tabset}
-## Single-line
-From Joe Roe's [paleoclim](https://github.com/joeroe/rpaleoclim/blob/master/R/paleoclim.R):
+<details>
+<summary>Code comments example</summary>
 
 ```r
-# Download
-if (!fs::file_exists(tmpfile) | isTRUE(skip_cache)) {
-  raster <- download_paleoclim(url, tmpfile, as, quiet)
+# Interpolate displacement curve to a target location within the spatial
+#  coverage in south-eastern Norway
+#
+# Interpolate the trajectory of past shoreline displacement to a target
+#  location within the spatial coverage on the Skagerrak coast of south-eastern
+#  Norway. This based on the distance of the location to the shoreline isobases
+#  of the geologically derived displacement curves and is done using inverse
+#  distance weighting.
+
+interpolate_curve <- function(target,
+                              isobases = NA,
+                              power = 2,
+                              cal_reso = 10,
+                              verbose = FALSE){
+
+  # Load the spatial limit in south-eastern Norway
+  spatial_limit <- sf::st_read(system.file("extdata/spatial_limit.gpkg",
+                                           package = "shoredate"), quiet = TRUE)
+
+  # Check that the target location is set to correct CRS (causes error if it
+  # is not) and is located within the study area (prints warning if it is not)
+  if (is.na(sf::st_crs(target))) {
+    stop("Undefined coordinate reference system. This needs to be set to WGS84 / UTM zone 32N (EPSG: 32632).")
+  }
+
+  if (sf::st_crs(target)$epsg != 32632) {
+    stop(paste0("Target has coordinate reference system with EPSG ",
+                sf::st_crs(target)$epsg,
+                ". This needs to be set to WGS84 / UTM zone 32N (EPSG: 32632)."))
+  }
+
+  if (!(sf::st_intersects(target, spatial_limit, sparse = FALSE))) {
+    warning(paste("Target location is not within the study area for which the interpolation method was derived."))
+  }
+
+  # Load existing displacement curves
+  displacement_curves <- get(load(system.file("extdata/displacement_curves.rda",
+                  package = "shoredate",
+                  mustWork = TRUE)))
+
+  bce <- seq(-1950, 10550,  cal_reso) * -1 # Sequence of years to match displacement data
+
+  # Use default isobases unless others are provided
+  if (any(is.na(isobases))) {
+    isobases <- sf::st_read(
+                system.file("extdata/isobases.gpkg",
+                  package = "shoredate",
+                  mustWork = TRUE), quiet = TRUE)
+  }
+
+  # If multiple displacement curves are to be returned due to multiple
+  # isobase directions, set up a list to be returned
+  if(length(unique(isobases$direction)) > 1){
+    interpolated_curve <- list()
+  }
+
+  for(i in 1:length(unique(isobases$direction))){
+    isobases_dir <- isobases[isobases$direction ==
+                               unique(isobases$direction)[i], ]
+    dists <- as.data.frame(sf::st_distance(target, isobases_dir))
+    names(dists) <- isobases_dir$name
+
+    values <- data.frame(matrix(ncol = 3, nrow = length(bce)))
+    names(values) <- c("bce", "lowerelev", "upperelev")
+
+    # In the case that a site is on the isobase of a
+    # displacement curve, simply return that displacement curve
+    if (any(as.numeric(dists) == 0)) {
+      values <- displacement_curves[displacement_curves$name ==
+                                  names(dists)[which(as.numeric(dists) == 0)], ]
+
+    } else {
+      if (verbose) {
+        # If a site is not on a isobase, the displacement curve needs to be
+        # interpolated, in which case printing progress might be of interest
+        print("Interpolating displacement curve")
+        pb <- utils::txtProgressBar(min = 0,
+                                    max = length(bce),
+                                    style = 3,
+                                    char = "=")
+      }
+
+      for(j in 1:length(bce)){
+      for(k in 1:ncol(dists)){
+        le <- displacement_curves[which(displacement_curves$name ==
+                                  names(dists)[k] & displacement_curves$bce ==
+                                  bce[j]), "lowerelev"]
+
+        ue <- displacement_curves[which(displacement_curves$name ==
+                                  names(dists)[k] & displacement_curves$bce ==
+                                    bce[j]), "upperelev"]
+
+        dists[2, k] <- le
+        dists[3, k] <- ue
+      }
+      distdat <- as.data.frame(t(dists))
+      names(distdat) <- c("distance", "lower", "upper")
+
+      # No sites are older than the lowest limit of any displacement curve
+      # so in case of NA values, simply assign NA
+      if (any(is.na(distdat))) {
+        lowerval <- upperval <- NA
+      } else {
+        # Inverse distance weighting
+        lowerval <- sum(apply(distdat, 1,
+                              function(x) x["lower"] * x["distance"]^-power)) /
+          sum(apply(distdat, 1, function(x) x["distance"] ^-power))
+        upperval <- sum(apply(distdat, 1,
+                              function(x) x["upper"] * x["distance"]^-power)) /
+          sum(apply(distdat, 1, function(x) x["distance"] ^-power))
+
+      }
+
+      values[j, 1:3] <- c(bce[j], lowerval, upperval)
+
+      if (verbose) {
+        utils::setTxtProgressBar(pb, j)
+      }
+      }
+    }
+    if (verbose) {
+      close(pb)
+    }
+
+    values$direction <- unique(isobases$direction)[i]
+    if (length(unique(isobases$direction)) > 1) {
+      interpolated_curve[[i]] <- values
+    } else {
+      interpolated_curve <- values
+    }
+
+  }
+
+  interpolated_curve
 }
 ```
 
-## Multi-line
-From Joe Roe's [paleoclim](https://github.com/joeroe/rpaleoclim/blob/master/R/paleoclim.R):
-
-```r
-#' Load data from PaleoClim
-#'
-#' Loads a PaleoClim data file (`.zip` format) into R as a `SpatRaster`.
-#'
-#' @param file Character. Path to a *.zip file downloaded from PaleoClim.
-#' @param as          Character. `as = "raster"` returns a `RasterStack` object
-#'                    (see [raster::stack()]) instead of the default raster from
-#'                    the `terra` package. It is provided for backwards
-#'                    compatibility and will be removed in future versions.
-#'                    Requires the `raster` package.
-#'
-#' @return
-#' `SpatRaster` object (see [terra::rast()]) with each bioclimatic variable
-#' as a separate named layer.
-#'
-#' @export
-#'
-#' @examples
-#' file <- system.file("testdata", "LH_v1_10m_cropped.zip",
-#'                     package = "rpaleoclim")
-#' load_paleoclim(file)
-load_paleoclim <- function(file, as = c("terra", "raster")) {
-  as <- rlang::arg_match(as)
-
-  tmpdir <- fs::file_temp("paleoclim_")
-  utils::unzip(file, exdir = tmpdir)
-
-  tifs <- fs::dir_ls(tmpdir, recurse = TRUE, glob = "*.tif")
-  names(tifs) <- fs::path_ext_remove(fs::path_file(tifs))
-
-  if (length(tifs) > 0) raster <- terra::rast(tifs)
-  else raster <- terra::rast()
-
-  if (as == "raster" ) {
-    if (!requireNamespace("raster", quietly = TRUE)) {
-      rlang::abort(
-        '`as = "raster"` requires package `raster`',
-        class = "rpaleoclim_missing_package"
-      )
-    }
-```
-
-## Documentation
-From Joe Roe's [paleoclim](https://github.com/joeroe/rpaleoclim/blob/master/R/paleoclim.R):
-
-```r
-#' Retrieve data from PaleoClim
-#'
-#' Downloads data from PaleoClim (<http://www.paleoclim.org>) and loads it into R
-#' as a `SpatRaster` object.
-#'
-#' @param period      Character. Time period to retrieve.
-#' @param resolution  Character. Resolution to retrieve.
-#' @param region      `SpatExtent` object or object that can be coerced to
-#'                    `SpatExtent` (see [terra::ext()]), describing the
-#'                    region to be retrieved. If `NULL`, defaults to the whole
-#'                    globe.
-#' @param as          Character. `as = "raster"` returns a `RasterStack` object
-#'                    (see [raster::stack()]) instead of the default raster from
-#'                    the `terra` package. It is provided for backwards
-#'                    compatibility and will be removed in future versions.
-#'                    Requires the `raster` package.
-#' @param skip_cache  Logical. If `TRUE`, cached data will be ignored.
-#' @param cache_path  Logical. Path to directory where downloaded files should
-#'   be saved. Defaults to R's temporary directory.
-#' @param quiet       Logical. If `TRUE`, suppresses messages and download
-#'   progress information.
-#'
-#' @details
-#' See <http://www.paleoclim.org> for details of the datasets and codings.
-#' Data at 30s resolution is only available for 'cur' and 'lgm'.
-#'
-#' By default, `paleoclim()` will read previously downloaded files in R's
-#' temporary directory if available. Use `skip_cache = TRUE` to override this.
-#' `cache_path` can also be set to another directory. This can be useful if you
-#' want to reuse downloaded data between sessions.
-#'
-#' @return
-#' `SpatRaster` object (see [terra::rast()]) with each bioclimatic variable
-#' as a separate named layer.
-#'
-#' @export
-#'
-#' @examplesIf interactive() && curl::has_internet()
-#' paleoclim("lh", "10m")
-```
-
-## Inline
-
-## TODO
-
-:::
+</details>
 
 ### Add a citation file
 A [cff file](https://citation-file-format.github.io/) is a plaintext file with .cff extension containing information that can be picked up by a reference manager to generate clean citations. It follows a yaml format, which is both human- and machine-readable.
@@ -300,7 +335,7 @@ Here are some useful resources for learning how tests can benefit you, and how t
 
 Be sure to also check the resources about [Continuous Integration](https://md.archaeo.dev/zQnT2XfxSD-FTqsPzxF7Xw?both#Setup-CI) to see how you can automate your tests (and test your code on multiple operating systems)!
 
-Adding more tests is a great thing to do in a maintainathon! We invite you to follow this grear example:
+Adding more tests is a great thing to do in a maintainathon! We invite you to follow this great example:
 
 <details>
 <summary>How to write unit tests</summary>
