@@ -164,9 +164,9 @@ date-released: 2024-08-24
 ```
 
 ### Writing comprehensive documentation
-When a README file is not enough, or if you want to e.g. host your code documentation on a separate website, you can use a _documentation generator_ such as [Sphinx](https://www.sphinx-doc.org/en/master/index.html). Sphinx is a tool that generates a series of HTML files (or PDF) starting from a directory containing reStructuredText or Markdown files.
+When a README file is not enough, or if you want to host your code documentation on a separate website, you can use a _documentation generator_ such as [Sphinx](https://www.sphinx-doc.org/en/master/index.html). Sphinx is a tool that generates a series of HTML files (or PDF) starting from a directory containing reStructuredText or Markdown files.
 
-Sphinx can be extended in various ways and it can power a whole website including other elements such as blog pages, homepages or books. However, it is primarily used to write documentation websites. To get a sense of what this looks like, look at many big documentation websites which are powered by Sphinx, such as the [Python documentation](https://docs.python.org/3/) and the [Linux Kernel documentation](https://docs.kernel.org/). Other extensions allow e.g. to use LaTeX scripts within the documentation files.
+Sphinx can be extended in various ways and it can power a whole website including other elements such as blog pages, homepages or books. However, it is primarily used to write documentation websites. To get a sense of what this looks like, look at many big documentation websites which are powered by Sphinx, such as the [Python documentation](https://docs.python.org/3/) and the [Linux Kernel documentation](https://docs.kernel.org/). Other extensions allow using LaTeX scripts within the documentation files.
 
 Sphinx can be set up easily: after installation it's enough to run `sphinx-quickstart` from a project folder to create the necessary boilerplate to host the documentation. The documentation can then be extended in whatever way it is preferred. A particularly useful resource within Sphinx is autodoc, which can populate an API documentation page using docstrings from functions in the code. 
 
@@ -184,7 +184,7 @@ def multiply(a: float, b: float) -> float:
     return a * b
 ```
 
-With Sphinx autodoc set up, the multiline comment would be pulled into an "API reference" section. This highlights the importance of writing documentation at the level of the code, and Sphinx allows to access documentation in a specific, well organized location. Because the resulting files are generally HTML, the documentation can then be hosted on a server as its own website, or as part of another website, such as a Github Pages webpage (as in Matteo Tomasini's example on [MetaPypulation](https://mtomasini.github.io/MetapopulationsPython/) (see the code [here](https://github.com/mtomasini/MetapopulationsPython/tree/main/docs)).
+With Sphinx autodoc set up, the multiline comment would be pulled into an "API reference" section. This highlights the importance of writing documentation at the level of the code, and Sphinx allows to access documentation in a specific, well organized location. Because the resulting files are generally HTML, the documentation can then be hosted on a server as its own website, or as part of another website, such as a Github Pages webpage (as in Matteo Tomasini's example on [MetaPypulation](https://mtomasini.github.io/MetapopulationsPython/) (see the code [here](https://github.com/mtomasini/MetapopulationsPython/tree/main/docs))).
 
 Because the Sphinx documentation needs to be rebuilt after each change, it's a good idea to automatize the process through the usage of Github Actions or other CI tools.
 
@@ -352,10 +352,10 @@ Done! We now wrote two *unit tests* (even though one of them will fail miserably
 
 ### [in progress:]{.mark} Optimizing for speed and efficiency
 
-### [in progress:]{.mark} Setup Continuous Integration
+### Setup Continuous Integration
 Continuous integration (CI) refers to the process of automating tasks pertaining to the integration of changes and new features into existing software. The automatization process can be setup for different tasks such as building a software, testing, generating documentation, etc. There are several CI tools that can be used, one of the most accessible is Github Actions (but do check out GitLab CI if you work on Gitlab). 
 
-Github Actions come in different flavors and can do many different things: for example, if you have setup a website using Github Pages, Github runs actions under the "hood" to build the website after each change committed. But Github Actions can be set-up for our own projects too. There is a whole [marketplace](https://github.com/marketplace?type=actions) of actions to choose from.
+Github Actions come in different flavors and can do many different things: for example, if you have setup a website using Github Pages, Github runs actions "under the hood" to build the website after each change committed. But Github Actions can be set-up for our own projects too. There is a whole [marketplace](https://github.com/marketplace?type=actions) of actions to choose from.
 
 To set up an automatic Github action, one needs to go in the repository of the project and click on Actions, then click on "New Workflow".
 
