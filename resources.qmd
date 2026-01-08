@@ -36,8 +36,8 @@ Here is a great write-up about how to write effective code comments: [How to Wri
 
 Here's a great example of code comments in action, adapted from the [interpolate_curve.R](https://github.com/isakro/shoredate/blob/master/R/interpolate_curve.R) function in Isak Roalkvam's [shoredate](https://github.com/isakro/shoredate) package:
 
-<details>
-<summary>Code comments example</summary>
+:::{.callout-tip collapse="true" appearance="simple"}
+## Code comments example
 
 ```r
 # Interpolate displacement curve to a target location within the spatial
@@ -177,7 +177,7 @@ interpolate_curve <- function(target,
 }
 ```
 
-</details>
+:::
 
 ## Add a citation file
 A [cff file](https://citation-file-format.github.io/) is a plaintext file with .cff extension containing information that can be picked up by a reference manager to generate clean citations. It follows a yaml format, which is both human- and machine-readable.
@@ -341,8 +341,9 @@ Be sure to also check the resources about [Continuous Integration](https://md.ar
 
 Adding more tests is a great thing to do in a maintainathon! We invite you to follow this great example:
 
-<details>
-<summary>How to write unit tests</summary>
+
+:::{.callout-tip collapse="true" appearance="simple"}
+## How to write unit tests
 
 1. Take one function or method from a script, a package, a software that you produced.
 2. Think long and hard about what you actually wanted this to do.
@@ -387,7 +388,7 @@ test_that("revolutionary_new_mean handles non-numeric vectors", {
 
 Done! We now wrote two *unit tests* (even though one of them will fail miserably).
 
-</details>
+:::
 
 ## Optimizing for speed and efficiency
 
@@ -396,9 +397,8 @@ Continuous integration (CI) refers to the process of automating tasks pertaining
 
 There are several CI tools that can be used, one of the most accessible is Github Actions (but do check out GitLab CI if you work on Gitlab). CI pipelines can also be run locally, specifically to deal with tasks that depend on several pieces of code that are connected in complicated ways. We've written a brief introduction to GitHub Actions to help get you started:
 
-<details>
-<summary>Using Github Actions</summary>
-
+:::{.callout-tip collapse="true" appearance="simple"}
+## Using Github Actions
 Github Actions come in different flavors and can do many different things: for example, if you have setup a website using Github Pages, Github runs actions "under the hood" to build the website after each change committed. But Github Actions can be set-up for our own projects too. There is a whole [marketplace](https://github.com/marketplace?type=actions) of actions to choose from.
 
 By setting up the correct Github Action (or whatever other tool you are using -- here we stick with the Github example for clarity), a series of steps is executed everytime the code is pushed to a Github repository. In case of steps that might break something, it is also possible to create Github Actions when a branch is merged, and this can be paired with [branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) to stop merges that would break the code.
@@ -497,8 +497,7 @@ jobs:
           publish_dir: build/
           force_orphan: true
 ```
-
-</details>
+:::
 
 Additionally, CI is useful for orchestrating the interaction of different pieces of a codebase. This supports the superior practice of writing different pieces of code dealing with different functions, rather than writing one large program that calls different functions in sequence. Imagine, for example, that you have an analysis composed of different steps, each steps producing the input for the next step. In certain situations you will want all steps to run in sequence, but in other situations you would like only certain steps to run (e.g. because other steps have been run previously and need no re-running). Make ensures that each component operates in a manner that corresponds with your instructions.
 
