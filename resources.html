@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-e1acd5637c463893ad826fee27f89eaf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f105dd771b016c151b62543f3b699574.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-7e8275894540f6f083917fffec537ced.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -232,20 +232,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="code-comments">Code comments</h2>
 <p>Code comments appear as silent (i.e.&nbsp;non-functional) text embedded in the source code. They communicate what functions do by providing a brief description of how they are situated in broader workflows. They may also include notes and task lists for iteratively improving existing functions.</p>
 <p>Some qualities of good code comments include:</p>
-<div class="columns-bullets">
 <ul>
 <li>Clear and concise</li>
 <li>Easy to remove once a fix has been implemented</li>
 <li>Explain the “why”, not the “what”</li>
 <li>Written for your future self</li>
 </ul>
-</div>
 <p>Here is a great write-up about how to write effective code comments: <a href="https://dev.to/anurag_dev/how-to-write-professional-code-comments-a-beginners-guide-to-better-code-documentation-27hf">How to Write Professional Code Comments: A Beginner’s Guide to Better Code Documentation (dev.to)</a></p>
 <p>Here’s a great example of code comments in action, adapted from the <a href="https://github.com/isakro/shoredate/blob/master/R/interpolate_curve.R">interpolate_curve.R</a> function in Isak Roalkvam’s <a href="https://github.com/isakro/shoredate">shoredate</a> package:</p>
-<details>
-<summary>
-Code comments example
-</summary>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Code comments example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpolate displacement curve to a target location within the spatial</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  coverage in south-eastern Norway</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -381,7 +387,9 @@ Code comments example
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  interpolated_curve</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+</div>
+</div>
+</div>
 </section>
 <section id="add-a-citation-file" class="level2">
 <h2 class="anchored" data-anchor-id="add-a-citation-file">Add a citation file</h2>
@@ -529,10 +537,18 @@ Code comments example
 </ul>
 <p>Be sure to also check the resources about <a href="https://md.archaeo.dev/zQnT2XfxSD-FTqsPzxF7Xw?both#Setup-CI">Continuous Integration</a> to see how you can automate your tests (and test your code on multiple operating systems)!</p>
 <p>Adding more tests is a great thing to do in a maintainathon! We invite you to follow this great example:</p>
-<details>
-<summary>
-How to write unit tests
-</summary>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How to write unit tests
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Take one function or method from a script, a package, a software that you produced.</li>
 <li>Think long and hard about what you actually wanted this to do.</li>
@@ -568,20 +584,36 @@ How to write unit tests
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_true</span>(result, ????)</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Done! We now wrote two <em>unit tests</em> (even though one of them will fail miserably).</p>
-</details>
+</div>
+</div>
+</div>
 </section>
 <section id="optimizing-for-speed-and-efficiency" class="level2">
 <h2 class="anchored" data-anchor-id="optimizing-for-speed-and-efficiency">Optimizing for speed and efficiency</h2>
 </section>
 <section id="setup-continuous-integration" class="level2">
 <h2 class="anchored" data-anchor-id="setup-continuous-integration">Setup Continuous Integration</h2>
-<p>Continuous integration (CI) refers to the process of automating tasks pertaining to the integration of changes and new features into existing software. The automatization process can be setup for different tasks such as building a software, testing, generating documentation, etc. There are several CI tools that can be used, one of the most accessible is Github Actions (but do check out GitLab CI if you work on Gitlab).</p>
+<p>Continuous integration (CI) refers to the process of automating tasks pertaining to the integration of changes and new features into existing software. The automatization process can be setup for different tasks such as building a software, testing, generating documentation, or producing accessible outputs deriving from the codebase. One notable aspect of CI is that they can be triggered by changes in the codebase, which can effectively automate one’s testing environment and documentation-writing processes, ensuring robust software development.</p>
+<p>There are several CI tools that can be used, one of the most accessible is Github Actions (but do check out GitLab CI if you work on Gitlab). CI pipelines can also be run locally, specifically to deal with tasks that depend on several pieces of code that are connected in complicated ways. We’ve written a brief introduction to GitHub Actions to help get you started:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Using Github Actions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Github Actions come in different flavors and can do many different things: for example, if you have setup a website using Github Pages, Github runs actions “under the hood” to build the website after each change committed. But Github Actions can be set-up for our own projects too. There is a whole <a href="https://github.com/marketplace?type=actions">marketplace</a> of actions to choose from.</p>
+<p>By setting up the correct Github Action (or whatever other tool you are using – here we stick with the Github example for clarity), a series of steps is executed everytime the code is pushed to a Github repository. In case of steps that might break something, it is also possible to create Github Actions when a branch is merged, and this can be paired with <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule">branch protection rules</a> to stop merges that would break the code.</p>
 <p>To set up an automatic Github action, one needs to go in the repository of the project and click on Actions, then click on “New Workflow”.</p>
 <p><img src="images/github_actions_new-workflow.png" class="img-fluid"></p>
-<p>Then, select the action you would like to set up. For example to set up automated testing on a Python software, you would choose “Python Application”.</p>
+<p>Then, select the action you would like to set up. As an example, to set up automated testing on a Python software, you would choose “Python Application”.</p>
 <p><img src="images/github_actions_application.png" class="img-fluid"></p>
-<p>This will create a yaml script in the <code>.github/workflows</code> folder, that can be modified to correspond to one’s own needs. For example, in the following file, the Github Action will perform three actions:</p>
+<p>This will create a yaml script in a <code>.github/workflows</code> folder, that can be modified to correspond to one’s own needs. One of the most straightforward ways to use Github Actions is to use it so that tests are run everytime you push a code (see section about testing, above), instead of having to run tests manually. For example, in the following file, the Github Action will perform three actions in order to test a code written in Python:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-6"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This workflow will install Python dependencies, run tests and lint with a single version of Python</span></span>
 <span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python</span></span>
 <span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -630,7 +662,7 @@ How to write unit tests
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="23,28,29,30" data-code-annotation="1">setting up the Python version and installing the dependencies to run the Python application (necessitates a requirements.txt file in the directory),</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="23,28,29,30" data-code-annotation="1">setting up the Python environment and installing the dependencies to run the Python application (necessitates a requirements.txt file in the directory),</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
@@ -638,10 +670,10 @@ How to write unit tests
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="39" data-code-annotation="3">testing using the functions defined by the user – this last action also generates a test coverage report.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="39" data-code-annotation="3">testing using the functions defined by the user – this last action also generates a test coverage report. Note that you still need to write the tests yourself!</span>
 </dd>
 </dl>
-<p>In another example, the following action is set up to deploy the documentation generated with Sphinx on the user’s Github Pages instance.</p>
+<p>Another way to use Github Actions is to have it (re-)deploy a webpage to the hosting domain everytime the code is pushed. This is something that happens automatically when setting up a Github Pages – Github provides a default Github Action in this case. For example, to deploy the documentation generated with Sphinx on the user’s Github Pages instance (see section about documentation), one could use a code like the following:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">push</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">,</span><span class="at"> workflow_dispatch</span><span class="kw">]</span></span>
@@ -671,7 +703,11 @@ How to write unit tests
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">publish_dir</span><span class="kw">:</span><span class="at"> build/</span></span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">force_orphan</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>However you want to use CI, it is invaluable. After setting up an action for automated testing, for example, after each commit and push to the Github repository, you will get a notification of failed tests, or successful deployment, or whatever action you have set up for your project.</p>
+</div>
+</div>
+</div>
+<p>Additionally, CI is useful for orchestrating the interaction of different pieces of a codebase. This supports the superior practice of writing different pieces of code dealing with different functions, rather than writing one large program that calls different functions in sequence. Imagine, for example, that you have an analysis composed of different steps, each steps producing the input for the next step. In certain situations you will want all steps to run in sequence, but in other situations you would like only certain steps to run (e.g.&nbsp;because other steps have been run previously and need no re-running). Make ensures that each component operates in a manner that corresponds with your instructions.</p>
+<p>This is typically accomplishing using GNU <a href="https://www.gnu.org/software/make/">Make</a>, a tool that controls how a software will run from a series of source code files. To do this, one can use a <a href="https://makefiletutorial.com/"><code>makefile</code></a>, a file that dictates how different pieces of a pipeline interact. While Make is typically operating on languages that need building (think C and C++), other languages have their own tools doing the same thing, such as Snakemake (for Python) and the library <a href="https://cran.r-project.org/web/packages/MakefileR/vignettes/An_Introduction_to_MakefileR.html">MakefileR</a> (for R).</p>
 </section>
 </section>
 <section id="further-reading" class="level1">
