@@ -53,3 +53,8 @@ details > summary {
 summary::marker {
   color: #5a7a2b;
 }
+
+.no-anchor .anchor-icon {
+  display: none;
+}
+
