@@ -526,44 +526,44 @@ For a distinctively archaeological perspective, consider reading Clemens Schmidt
 
 # Further Reading
 ## Research software engineering
-Bast, R. et al. (2023) "How to document your research software - CodeRefinery lesson". Available at: https://zenodo.org/records/8280235 (Accessed: January 7, 2026).
+Bast, R. et al. (2023) How to document your research software - CodeRefinery lesson. <https://zenodo.org/records/8280235>
 
-Bast, R. et al. (2025) "Automated testing - CodeRefinery lesson". Available at: https://zenodo.org/records/16410888 (Accessed: January 7, 2026)
+Bast, R. et al. (2025) Automated testing - CodeRefinery lesson. <https://zenodo.org/records/16410888>
 
-Coelho, J. and Valente, M.T. (2017) "Why modern open source projects fail," in Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering. ESEC/FSE’17: Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering, Paderborn Germany: ACM, pp. 186–196. Available at: https://doi.org/10.1145/3106237.3106246.
+Coelho, J. and Valente, M.T. (2017) Why modern open source projects fail, in Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering. ESEC/FSE’17: Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering, Paderborn Germany: ACM: 186–196. <https://doi.org/10.1145/3106237.3106246>
 
-Irving, D. et al. (2021) Research Software Engineering with Python. Available at: https://third-bit.com/py-rse/ (Accessed: January 2, 2026).
+Irving, D. et al. (2021) Research Software Engineering with Python. <https://third-bit.com/py-rse>
 
-Nguyá»…n, S. and Rampin, V. (2022) "Who Writes Scholarly Code?," International Journal of Digital Curation, 17(1), p. 18. Available at: https://doi.org/10.2218/ijdc.v17i1.839.
+Nguyễn, S. and Rampin, V. (2022) "Who Writes Scholarly Code?" International Journal of Digital Curation 17(1). <https://doi.org/10.2218/ijdc.v17i1.839>.
 
-Ratto, M. (2007) "A Practice-Based Model of Access for Science: Linux Kernel Development and Shared Digital Resources," Science & Technology Studies, 20(1), pp. 72–105. Available at: https://doi.org/10.23987/sts.55220.
+Ratto, M. (2007) "A Practice-Based Model of Access for Science: Linux Kernel Development and Shared Digital Resources," Science & Technology Studies 20(1): 72–105. <https://doi.org/10.23987/sts.55220>.
 
-Sholler, D. et al. (2019) "Ten Simple Rules for Helping Newcomers Become Contributors to Open Projects," p. 11. Available at: https://doi.org/10.1371/journal.pcbi.1007296.
+Sholler, D. et al. (2019) "Ten Simple Rules for Helping Newcomers Become Contributors to Open Projects," PLOS Computational Biology, 15(9): e1007296. <https://doi.org/10.1371/journal.pcbi.1007296>
 
-Taschuk, M. and Wilson, G. (2017) "Ten simple rules for making research software more robust," PLOS Computational Biology, 13(4), p. e1005412. Available at: https://doi.org/10.1371/journal.pcbi.1005412.
+Taschuk, M. and Wilson, G. (2017) "Ten simple rules for making research software more robust" PLOS Computational Biology, 13(4): e1005412. <https://doi.org/10.1371/journal.pcbi.1005412>
 
-Wilson, G. et al. (2014) "Best Practices for Scientific Computing," PLOS Biology, 12(1), p. e1001745. Available at: https://doi.org/10.1371/journal.pbio.1001745.
+Wilson, G. et al. (2014) "Best Practices for Scientific Computing," PLOS Biology, 12(1): e1001745. <https://doi.org/10.1371/journal.pbio.1001745>
 
-Wilson, G. et al. (2017) "Good enough practices in scientific computing," PLOS Computational Biology, 13(6), p. e1005510. Available at: https://doi.org/10.1371/journal.pcbi.1005510.
+Wilson, G. et al. (2017) "Good enough practices in scientific computing," PLOS Computational Biology, 13(6): e1005510. <https://doi.org/10.1371/journal.pcbi.1005510>
 
 ## Archaeological software development
-Batist, Z. and Roe, J. (2024) "Open Archaeology, Open Source? Collaborative practices in an emerging community of archaeological software engineers," Internet Archaeology [Preprint], (67). Available at: https://doi.org/10.11141/ia.67.13.
+Batist, Z. and Roe, J. (2024) "Open Archaeology, Open Source? Collaborative practices in an emerging community of archaeological software engineers," Internet Archaeology 67. <https://doi.org/10.11141/ia.67.13>
 
-Bogdani, J. and Sciacca, F. (2020) "An introspective, incomplete, view on the activity of the FLOS community dealing with Archaeology and Cultural Heritage," ARCHEO. FOSS XIV 2020, 15, p. 178.
+Bogdani, J. and Sciacca, F. (2020) "An introspective, incomplete, view on the activity of the FLOS community dealing with Archaeology and Cultural Heritage," ARCHEOFOSS XIV 2020. <https://www.jstor.org/stable/jj.14638139.22>
 
-Homburg, T. et al. (2021) "Recommendations for the review of archaeological research software," Archäologische Informationen, pp. 357-370 Seiten. Available at: https://doi.org/10.11588/AI.2020.1.81423.
+Homburg, T. et al. (2021) "Recommendations for the review of archaeological research software," Archäologische Informationen: 357-370 Seiten. <https://doi.org/10.11588/AI.2020.1.81423>
 
-Schmidt, S.C. and Marwick, B. (2020) "Tool-driven revolutions in archaeological science," Journal of Computer Applications in Archaeology, 3(1), pp. 18–32. Available at: https://doi.org/10.5334/jcaa.29.
+Schmidt, S.C. and Marwick, B. (2020) "Tool-driven revolutions in archaeological science," Journal of Computer Applications in Archaeology, 3(1): 18–32. <https://doi.org/10.5334/jcaa.29>
 
-Scollar, I. (1999) "25 Years of Computer Applications in Archaeology," in L. Dingwall et al. (eds.) Archaeology in the Age of the Internet. Computer Applications and Quantitative Methods in Archaeology, Oxford: Archaeopress, pp. 5–10. Available at: https://proceedings.caaconference.org/paper/02_scollar_caa_1997/.
+Scollar, I. (1999) "25 Years of Computer Applications in Archaeology," in L. Dingwall et al. (eds.) Archaeology in the Age of the Internet. Computer Applications and Quantitative Methods in Archaeology, Oxford: Archaeopress: 5–10. <https://proceedings.caaconference.org/paper/02_scollar_caa_1997>
 
-Whallon, R. (1972) "The computer in archaeology: A critical survey," Computers and the Humanities, 7(1), pp. 29–45. Available at: https://doi.org/10.1007/BF02403759.
+Whallon, R. (1972) "The computer in archaeology: A critical survey," Computers and the Humanities, 7(1): 29–45. <https://doi.org/10.1007/BF02403759>
 
-Wilson, A.T. and Edwards, B. (eds.) (2015) Open Source Archaeology: Ethics and Practice. De Gruyter Open Poland. Available at: https://doi.org/10.1515/9783110440171.
+Wilson, A.T. and Edwards, B. (eds.) (2015) Open Source Archaeology: Ethics and Practice. De Gruyter Open Poland. <https://doi.org/10.1515/9783110440171>
 
 ## Culture and history of FOSS
-Coleman, E.G. (2012) Coding Freedom: The Ethics and Aesthetics of Hacking. Princeton University Press. Available at: https://doi.org/10.1515/9781400845293.
+Coleman, E.G. (2012) Coding Freedom: The Ethics and Aesthetics of Hacking. Princeton University Press. <https://doi.org/10.1515/9781400845293>
 
-Kelty, C.M. (2008) Two bits: The cultural significance of free software. Duke University Press.
+Kelty, C.M. (2008) Two bits: The cultural significance of free software. Duke University Press. <https://www.dukeupress.edu/two-bits>
 
-O’Neil, M. (2009) Cyberchiefs: Autonomy and authority in online tribes. London, UK: Pluto Press.
+O’Neil, M. (2009) Cyberchiefs: Autonomy and authority in online tribes. London, UK: Pluto Press. <https://doi.org/10.2307/j.ctt183pc3c>
