@@ -13,23 +13,19 @@ subtitle: "Let's clean, document and revisit older code and data, together!"
 [✓.]{style="font-size: 24px; font-weight: bold; color: #5a7a2b;"} &nbsp;That's it!
 :::
 
-### [Some things you can do to participate:]{style="color: #ab4642;"}
+### [[Some things you can do to participate:](https://sslarch.github.io/maintainathon/resources)]{style="color: #ab4642;"}{.no-anchor}
 
 <div style=" columns: 2; -webkit-columns: 2; -moz-columns: 2;">
 - Add comments to old code or code in progress
 - Write a better README
 - Archive your code in long-term repository
-- Document your research group's coding guidelines
 - Add an open license
 - Add a citation file to your repo
-- Write some contributor guidelines
-- Develop a roadmap or checklist of things to do
+- Write contributor guidelines
+- Develop a project roadmap
 - Acknowledge contributors
-- Make a video demo of your code in action
-- List your code in a community
-- Cleanup your working directories
-- Archive abandoned projects
-- Volunteer to review for the Journal of Open Source Software
+- List your code in a community registry
+- Write a code review
 - Browse critical research on software development practices
 - Donate to FOSS projects
 
