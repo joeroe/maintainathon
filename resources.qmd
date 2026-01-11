@@ -243,7 +243,7 @@ Because the Sphinx documentation needs to be rebuilt after each change, it's a g
 
 The framework of a package offers a natural structure to draw on if you want to provide more comprehensive documentation for a project based in R.
 While packages are most commonly encountered in the form of software extensions that you can install locally to gain access to extended functionality, this framework also forms the foundation of what [Marwick et al. (2018](https://doi.org/10.1080/00031305.2017.1375986); [Marwick 2017](https://doi.org/10.1007/s10816-015-9272-9)) term a research compendium.
-Their package [rrtools](https://github.com/benmarwick/rrtools) provides tools to automatically set up a new, sensibly structured directory which you can work in if you aim to conduct and disseminate research in a reproducible manner using R.
+The package [rrtools](https://github.com/benmarwick/rrtools), developed by Marwick and colleagues, provides tools to automatically set up a new, sensibly structured directory which you can work in if you aim to conduct and disseminate research in a reproducible manner using R.
 (Note that rrtools will be useful irrespective of whether the options for extended documentation presented below is relevant to you, as it also helps implementing and setting up other concepts covered in this document, such as a README file, licence, continuous integration, package versioning and more).
 Packages can also easily be published as websites, for example via the package [pkgdown](https://pkgdown.r-lib.org), and so the concept of a package is also related to how you could set up a website or blog using R (see for example [Quarto Websites](https://quarto.org/docs/websites/)).
 
@@ -290,10 +290,10 @@ When it comes to documenting functions, this is a slightly more specialized topi
 Manual pages for functions are useful for explaining to a user what a specific function is meant to do, to outline how different parameters can be adjusted and the consequences of this, it can point to other R functions that are relevant in conjunction with a specific function, and it can include useful links or literature references.
 This documentation therefore provides a more in-depth and comprehensive explanation of an individual function than what is typically laid out in for example a README, while at the same time giving a more top-level explanation in a standardized format than what is usually the case with code comments.
 
-The documentation of a function is commonly set up using [roxygen2](https://roxygen2.r-lib.org), which generates a document (in the form of an .Rd file) that R will render when you call the manual page, provided it is located in the correct `man/` directory within the package directory itself (see <https://r-pkgs.org/structure.html> for more on how to structure a source package).
+The documentation of a function is commonly set up using [roxygen2](https://roxygen2.r-lib.org), which generates a document (in the form of an .Rd file) placed in the directory `man/` which R will render when you call the manual page (see <https://r-pkgs.org/structure.html> for more on how to structure a source package). Documenting a function with roxygen2 also allows a function to be 'exported', meaning it will be available for others to use when they attach a package with a `library()` call.
 
 Documentation with roxygen2 is declared by starting each line of the documentation with `#'`, and is typically placed before the code definition of the function you are documenting.
-Here is an example given in the *R packages* book, where a simple function that adds two numbers together is documented using roxygen2 and then the function itself is defined in R code:
+Here is slightly modified example from the *R packages* book, where a simple function that adds two numbers together is documented using roxygen2 and then the function itself is defined in R code:
 
 ```r
 #' Add together two numbers
@@ -301,6 +301,7 @@ Here is an example given in the *R packages* book, where a simple function that 
 #' @param x A number.
 #' @param y A number.
 #' @returns A numeric vector.
+#' @export
 #' @examples
 #' add(1, 1)
 #' add(10, 1)
@@ -312,7 +313,10 @@ add <- function(x, y) {
 
 This starts with a description of what the function does.
 Then follows a list of parameters, stating what input data the function requires and the kind of data this should be.
-Parameters with default values which can be adjusted should also be listed here. After this is a description of what the function returns, followed by two examples of how the function can be used.
+Parameters with default values which can be adjusted should also be listed here.
+After this is a description of what the function returns, followed by a declaration that the function should be exported.
+Exporting a function means roxygen2 will add it to be exported via the so-called NAMESPACE file, making the function available for a user that has installed and attached the package.
+Finally the documentation provides two examples of how the function can be used.
 After the roxygen2 documentation you can see the function definition itself in code form.
 A comment has also been added here (using the standard `#` symbol for defining comments in R) to indicate that you can (and should) still comment specific lines of code, even though this will not be visible on the manual page.
 You can compare this outline of a roxygen2 documentation to the manual page for `?seriate_average` to get a sense of how the different fields end up being formatted. 
