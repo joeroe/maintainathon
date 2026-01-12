@@ -242,7 +242,7 @@ Because the Sphinx documentation needs to be rebuilt after each change, it's a g
 <summary> Comprehensive documentation in R </summary>
 
 The framework of a package offers a natural structure to draw on if you want to provide more comprehensive documentation for a project based in R.
-While packages are most commonly encountered in the form of software extensions that you can install locally to gain access to extended functionality, this framework also forms the foundation of what [Marwick et al. (2018](https://doi.org/10.1080/00031305.2017.1375986); [Marwick 2017](https://doi.org/10.1007/s10816-015-9272-9)) term a research compendium.
+While packages are most commonly encountered in the form of software extensions that you can install locally to gain access to extended functionality, this framework also forms the foundation of what ([Marwick et al. (2018](https://doi.org/10.1080/00031305.2017.1375986); [Marwick 2017](https://doi.org/10.1007/s10816-015-9272-9)) term a research compendium.
 The package [rrtools](https://github.com/benmarwick/rrtools), developed by Marwick and colleagues, provides tools to automatically set up a new, sensibly structured directory which you can work in if you aim to conduct and disseminate research in a reproducible manner using R.
 (Note that rrtools will be useful irrespective of whether the options for extended documentation presented below is relevant to you, as it also helps implementing and setting up other concepts covered in this document, such as a README file, licence, continuous integration, package versioning and more).
 Packages can also easily be published as websites, for example via the package [pkgdown](https://pkgdown.r-lib.org), and so the concept of a package is also related to how you could set up a website or blog using R (see for example [Quarto Websites](https://quarto.org/docs/websites/)).
@@ -373,10 +373,10 @@ It partly reflects a longstanding tradition in the open source world for a direc
 ### Open issues in your own repositories
 
 You can also of course create issues in your own repositories.
-This can be an effective way of managing your own work, as the issues serve as a 'to-do list' and on many platforms can be organised into various project management tools (see below).
+This can be an effective way of managing your own work, as the issues serve as a 'to-do list' and on many platforms can be organised into various project management tools.
 Managing development publicly in this way has several advantages:
 it allows users to judge the state of development of the software (e.g. is it finished or are a lot of new features still planned);
-it means users can see if you're already aware of a issue, before reporting it themselves;
+it means users can see if you're already aware of an issue, before reporting it themselves;
 others may be motivated to contributed to solving the problem for you (see below on how to encourage collaboration).
 
 ## Develop a project roadmap
